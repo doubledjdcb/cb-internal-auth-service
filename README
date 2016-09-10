@@ -1,0 +1,19 @@
+luding-mbp:~ ddurham$ curl -i -H "Content-Type: application/json" -X POST -d '{"name":"sally"}' http://localhost:8080/user/login
+HTTP/1.1 200 OK
+Connection: keep-alive
+Transfer-Encoding: chunked
+Content-Type: application/json;charset=UTF-8
+Date: Mon, 11 Jul 2016 22:13:40 GMT
+
+{"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWxseSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJpYXQiOjE0NjgyNzc4NzZ9.Z6Tl1LjoBX7EhinZoFi5WLpwhb708yqGxOB2hNt5ihY"}
+
+
+//hitting the api with the bearer token
+luding-mbp:~ ddurham$ curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWxseSIsInJvbGVzIjpbInVzZXIiLCJhZG1pbiJdLCJpYXQiOjE0NjgyNzc4NzZ9.Z6Tl1LjoBX7EhinZoFi5WLpwhb708yqGxOB2hNt5ihY" -H "Content-Type: application/json" http://localhost:8080/api/role/admin
+HTTP/1.1 200 OK
+Connection: keep-alive
+Transfer-Encoding: chunked
+Content-Type: application/json;charset=UTF-8
+Date: Mon, 11 Jul 2016 23:00:42 GMT
+
+true
